@@ -164,7 +164,6 @@ main {
     justify-content: flex-start;
 
     margin-top: 20px;
-
     border: 0px solid red;
 }
 
@@ -177,7 +176,6 @@ main {
     align-items: flex-start;
     justify-content: space-around;
     box-sizing: border-box;
-    overflow: hidden;
 }
 @media (min-width: 2050px) {.tittle_img { gap: 500px;} }/*Tittle <--> img distnace corrction with wide screens*/
 .tittle_description {
@@ -188,6 +186,7 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
+    z-index: 1;
 }
 .tittle_description h1 {
     font-weight: 600;
@@ -206,8 +205,9 @@ main {
     border-radius: 10px;
     text-wrap: nowrap;
 }
-.hero_car_img {width: 850px;}
-
+.hero_car_img {width: 850px; transition: transform 0.3s ease-out;}
+@media (max-width: 1400px) { .hero_car_img {transform: translateX(-115px);}
+}
 
 /* -- Badges -- */
 .badges {
@@ -222,29 +222,58 @@ main {
     
     border: 0px solid black;
 }
-.badge {
+.badge_hover_background {
     height: 100%;
     width: 25%;
+}
+.badge {
+    min-height: 100%;
+    height: auto;
+    width: 25%;
 
+    padding: 10px;
     border-radius: 10px;
+    box-sizing: border-box;
+
     background-color: rgb(230, 230, 230);
     transition: all 0.2s ease-out;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
-.badge:hover {
-    transform: scale(1.01);
-    background-color: rgb(218, 218, 218);
-}
-.badge img {
-    width: 70px;
-}
+@media (max-width: 1200px) {.badges {height: 250px;} }
+@media (max-width: 800px) {
+    .badges {height: 350px;} 
+    .tittle_img {
+        flex-direction: column;
+    }
+} /*PHONE MEDIA  --> UPDATE LATER */
+
+.badge img {width: 50px; margin: 20px 0px 10px 0px; }
+
+
 .badge h3 {
     font-weight: 600;
     font-size: 18px;
     color: rgb(68, 68, 68);
     font-family: 'Poppins', sans-serif;
+
+    text-align: center;
+    margin: 0;
+}
+.badge p {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;  
+    font-size: 15px;
+    color: rgb(105, 105, 105);
+    text-align: center;
+    margin: 0;;
+}
+
+
+.badge:hover {
+    transform: scale(1.01);
+    background-color: rgb(218, 218, 218);
 }
