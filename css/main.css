@@ -28,7 +28,7 @@ html, body {
 
     /* Overflow */
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
 
     /* Aesthetics */
     background-color: white;
@@ -204,7 +204,7 @@ header {
 main {
     /* Dimensions & Margin */
     width: 100%;
-    height: 100%;
+    height: auto;
     margin-top: 10px;
 
     /* Flexbox Layout */
@@ -212,9 +212,9 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-
+    box-sizing: border-box;
     /* Aesthetics */
-    border: 0px solid red;
+    border: 0px solid  blueviolet;
 }
 
 /* ----- HERO SECTION ----- */
@@ -231,7 +231,7 @@ main {
     justify-content: flex-start;
 
     /* Aesthetics */
-    border: 1px solid red;
+    border: 0px solid blue;
 }
 
 /* Container --> Tittle, Description & Image */
@@ -247,7 +247,7 @@ main {
     justify-content: space-around;
 
     /* Aesthetics */
-    border: 1px solid yellow;
+    border: 0px solid yellow;
 }
 
 @media (min-width: 2050px) { 
@@ -267,7 +267,7 @@ main {
     justify-content: flex-end;
 
     /* Aesthetics */
-    border: 1px solid black;
+    border: 0px solid black;
 }
 
 .tittle_description h1 {
@@ -321,7 +321,7 @@ main {
     gap: 15px;
     
     /* Aesthetics */
-    border: 1px solid black;
+    border: 0px solid black;
 }
 
 /* Hide duplicates on desktop */
@@ -392,6 +392,73 @@ main {
     background-color: rgb(218, 218, 218);
     transform: scale(1.01);
 }
+
+/* -- UI PRESENTATION -- */
+.ui_container {
+    border: 0px solid black;
+    width: 100%;
+    height: 900px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background-image: url("/img/hero/hero_app_ui_background.jpg");
+    background-size: cover;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+
+    overflow: hidden;
+}
+.ui_tittle {
+    width: 900px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.2;
+    text-align: center;
+}
+.learn_more_btn {
+    /*button style*/
+    background-color: white ;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px 20px;
+    /*text style*/
+    color: blue;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;  
+    font-size: 15px;
+    transition: all 0.3s ease-out;
+}
+.learn_more_btn:hover {transform: scale(1.1);}
+.learn_more_btn:active {transform: scale(1);}
+.app_ui_img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+.app_ui_img img {
+    border: 10px solid black;
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 1000px) {
